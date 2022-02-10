@@ -1,0 +1,12 @@
+#MainPage {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#map, #items {
+    flex: 1;
+    height: 100%;
+    border: 1px black solid
+}

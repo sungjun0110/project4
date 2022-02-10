@@ -1,0 +1,8 @@
+.Item {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+.Item img {
+    width: 400px;
+}

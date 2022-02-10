@@ -1,0 +1,4 @@
+#ItemsPage {
+    display: flex;
+    flex-direction: column;
+}

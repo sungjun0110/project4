@@ -6,7 +6,6 @@ const logger = require('morgan');
 const app = express();
 
 app.use(logger('dev'));
-
 // Always require and configure near the top
 require('dotenv').config();
 
@@ -25,6 +24,7 @@ app.use(require('./config/checkToken'));
 
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
+app.use('/api/items', require('./routes/api/items'));
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
