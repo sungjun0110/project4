@@ -1,6 +1,7 @@
 /* CSS Custom Properties */
 :root {
   --white: #FFFFFF;
+  --gray-1: #fafaf5;
   --tan-1: #FBF9F6;
   --tan-2: #E7E2DD;
   --tan-3: #E2D9D1;
@@ -17,13 +18,10 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+  font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
-  padding: 2vmin;
+  background-color: var(--white);
   height: 100vh;
 }
 
@@ -93,9 +91,11 @@ p.error-message {
 
 form {
   display: grid;
-  grid-template-columns: 1fr 3fr;
   gap: 1.25vmin;
   color: var(--text-light);
+  border: 1px solid var(--tan-4);
+  padding: 2em;
+  border-radius: 1em;
 }
 
 label {
@@ -119,6 +119,7 @@ input:focus {
 }
 
 button, a.button {
+  font-family: 'Roboto Mono', monospace;
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);

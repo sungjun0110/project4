@@ -1,4 +1,4 @@
 #ItemsPage {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template: "item item item item item" 1fr / auto;
 }

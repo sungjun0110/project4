@@ -1,0 +1,8 @@
+.ItemForm {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.ItemForm label {
+    width: 200px;
+}

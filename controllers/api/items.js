@@ -4,24 +4,37 @@ module.exports = {
     create,
     index,
     show,
+    deleteItem,
+    showMine,
 }
 
 async function create(req, res) {
     try {
-        console.log(req.body);
         const item = await Item.create(req.body);
-        console.log(item);
+        res.json(item);
     } catch (e) {
         res.status(400).json(e);
     }
 }
 
 async function index(req, res) {
-    const items = await Item.find({});
+    const items = await Item.find({user: { $nin: [
+        req.params.userId,
+    ]}});
     res.json(items);
 }
 
 async function show(req, res) {
-    const item = await Item.findById(req.params.itemId);
+    const item = await Item.findById(req.params.itemId).populate('user').exec();;
     res.json(item);
+}
+
+async function deleteItem(req, res) {
+    await Item.findByIdAndDelete(req.params.itemId);
+    res.json('');
+}
+
+async function showMine(req, res) {
+    const items = await Item.find({user: new Object({_id: req.params.userId})});
+    res.json(items);
 }

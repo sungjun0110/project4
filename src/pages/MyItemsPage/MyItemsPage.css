@@ -1,0 +1,14 @@
+.items-container {
+    display: grid;
+    grid-template: "item item item item item" 1fr / auto;
+}
+
+.form-btn {
+    background-color: rgba(0,0,0,0);
+    color: black;
+    border: none;
+}
+
+.form-btn:hover {
+    text-decoration: underline;
+}

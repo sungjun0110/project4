@@ -1,12 +1,10 @@
 import './MainPage.css';
 import ItemsPage from '../ItemsPage/ItemsPage';
-import MapPage from '../MapPage/MapPage';
 
-export default function MainPage() {
+export default function MainPage({ user }) {
     return (
         <main id='MainPage'>
-            <MapPage />
-            <ItemsPage />
+            <ItemsPage user={user} />
         </main>
     );
 }

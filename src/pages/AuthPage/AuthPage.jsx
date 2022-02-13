@@ -17,9 +17,9 @@ export default function AuthPage({ setUser }) {
                 : <LoginForm setUser={setUser} />
             }
             <button onClick={activeHandler}>
-                { isSignUpActive
-                    ? 'Click to Sign Up'
-                    : 'Click to Log In'
+                { !isSignUpActive
+                    ? 'Sign Up'
+                    : 'Sign In'
                 }
             </button>
         </main>

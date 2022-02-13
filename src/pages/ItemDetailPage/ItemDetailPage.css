@@ -1,0 +1,43 @@
+.item-container {
+    display: flex;
+    width: 1000px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.img-container {
+    flex: 50%;
+    display: flex;
+    justify-content: right;
+}
+
+.item-container img {
+    max-width: 400px;
+    border-radius: 1em;
+}
+
+.item-description {
+    padding: 1em 0px 1em 2em;
+    flex: 50%;
+    text-align: left;
+}
+
+.username {
+    background-color: red;
+    font-size: .9em;
+    font-weight: bold;
+    display: inline;
+    padding: .4em 1.3em;
+    border-radius: 999px;
+    color: white;
+}
+
+.content {
+    margin-top: 1.8em;
+}
+
+.title {
+    font-weight: bold;
+    line-height: 2em;
+}
+
