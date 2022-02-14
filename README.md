@@ -4,13 +4,13 @@ A website where users can exchange their goods for goods. You can send an offer 
 
 ## Screenshots
 
-<img src="https://i.imgur.com/hdDvEn2.png" width="450px">
+<img src="https://i.imgur.com/hdDvEn2.png" width="600px">
 
-<img src="https://i.imgur.com/LkXEokE.png" width="450px">
+<img src="https://i.imgur.com/LkXEokE.png" width="600px">
 
-<img src="https://i.imgur.com/v5zYNVr.png" width="450px">
+<img src="https://i.imgur.com/v5zYNVr.png" width="600px">
 
-<img src="https://i.imgur.com/IWzylfj.png" width="450px">
+<img src="https://i.imgur.com/IWzylfj.png" width="600px">
 
 
 ## Technologies
