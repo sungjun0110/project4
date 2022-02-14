@@ -79,6 +79,8 @@ code {
 
 .form-container {
   padding: 3em;
+  width: 800px;
+  margin: 0 auto;
   background-color: var(--tan-1);
   border: 2px solid var(--tan-3);
   border-radius: 1em;
