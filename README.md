@@ -2,7 +2,7 @@
 
 A website where users can exchange their goods for goods. You can send an offer to exchange goods.
 
-[Link](https://jun-project4.herokuapp.com/)
+[Deployed Version](https://jun-project4.herokuapp.com/)
 
 ## Screenshots
 
