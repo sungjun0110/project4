@@ -72,8 +72,11 @@ async function acceptExchange(req, res) {
 }
 
 async function deleteExchange(req, res) {
-    await Exchange.findByIdAndDelete(req.params.exchangeId, function(err, result) {
-        console.log(result);
-        res.json(result);
+    await Exchange.findByIdAndDelete(req.params.exchangeId, async function(err, result) {
+        await Item.findByIdAndUpdate(result.give, {isExchanging: false}, async function(err, item1) {
+            await Item.findByIdAndUpdate(result.take, {isExchanging: false}, function (err, item2) {
+                res.json(result);
+            }).clone();
+        }).clone();
     }).clone();
 }
