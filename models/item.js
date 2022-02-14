@@ -4,9 +4,10 @@ const Schema = mongoose.Schema;
 const itemSchema = new Schema({
     user: {type: Schema.Types.ObjectId, ref: 'User'},
     name: {type: String, required: true},
-    value: {type: String, required: true},
+    description: {type: String, required: true},
     photos: {type: String},
-    isExchainging: {type: Boolean, default: false},
+    condition: {type: String, required: true},
+    isExchanging: {type: Boolean, default: false},
 }, {
     timestamps: true
 });

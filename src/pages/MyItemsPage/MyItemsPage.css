@@ -1,6 +1,6 @@
 .items-container {
     display: grid;
-    grid-template: "item item item item item" 1fr / auto;
+    grid-template: "item item item item" 1fr / auto;
 }
 
 .form-btn {
@@ -11,4 +11,10 @@
 
 .form-btn:hover {
     text-decoration: underline;
+}
+
+.form-div {
+    height: 0;
+    overflow: hidden;
+    transition: all .25s ease;
 }

@@ -16,12 +16,13 @@ const myBucket = new AWS.S3({
     region: REGION,
 })
 
-export default function UploadImageToS3({ handlePhotos }) {
+export default function UploadImageToS3({ setFileName }) {
     const [progress , setProgress] = useState(0);
     const [selectedFile, setSelectedFile] = useState(null);
 
     const handleFileInput = (e) => {
         setSelectedFile(e.target.files[0]);
+        setFileName(`https://${S3_BUCKET}.s3.${REGION}.amazonaws.com/${e.target.files[0].name}`);
     }
 
     const uploadFile = (file) => {
@@ -38,10 +39,6 @@ export default function UploadImageToS3({ handlePhotos }) {
             })
             .send((err) => {
                 if (err) console.log(err)
-                else {
-                    console.log(selectedFile.name);
-                    handlePhotos(`https://${S3_BUCKET}.s3.${REGION}.amazonaws.com/${selectedFile.name}`)
-                };
             })
     }
 

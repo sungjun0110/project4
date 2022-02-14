@@ -8,6 +8,7 @@ import MainPage from '../MainPage/MainPage';
 import MyItemsPage from '../MyItemsPage/MyItemsPage';
 import ItemDetailPage from '../ItemDetailPage/ItemDetailPage';
 import NewExchangePage from '../NewExchangePage/NewExchangePage';
+import CompletedExchangePage from '../ CompletedExchangePage/CompletedExchangePage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -28,6 +29,7 @@ export default function App() {
               <Route path="/myitems" element={<MyItemsPage user={user} />} />
               <Route path="/items/:itemId" element={<ItemDetail />} />
               <Route path="/exchange" element={<NewExchangePage user={user}/>} />
+              <Route path="/completed" element={<CompletedExchangePage user={user} />} />
             </Routes>
           </div>
         </>

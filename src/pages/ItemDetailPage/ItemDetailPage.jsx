@@ -7,6 +7,7 @@ import './ItemDetailPage.css';
 
 export default function ItemDetailPage({ user, itemId }) {
     const [item, setItem] = useState({});
+    const [itemOwner, setItemOwner] = useState('');
     const [myItems, setMyItems] = useState([]);
     const [exchange, setExchange] = useState({take: null, give: null});
     const navigate = useNavigate();
@@ -15,9 +16,10 @@ export default function ItemDetailPage({ user, itemId }) {
         async function getItem() {
             const item = await itemsAPI.getItem(itemId);
             setItem(item);
+            setItemOwner(item.user._id);
         }
         getItem();
-    }, [itemId]);
+    }, []);
 
     async function deleteHandler(e) {
         e.preventDefault();
@@ -26,18 +28,20 @@ export default function ItemDetailPage({ user, itemId }) {
     }
 
     async function offerHandler(giveId, giver) {
-        setExchange({give: giveId, giver: giver, take: itemId, taker: item.user})
+        await setExchange({give: giveId, giver: giver, take: itemId, taker: item.user});
     }
 
     useEffect(function() {
-        function createExchange() {
-            exchangesAPI.createExchange(exchange);
+        async function createExchange() {
+            const newExchange = await exchangesAPI.createExchange(exchange);
+            navigate('/exchange');
         }
         if (exchange.take) createExchange();
     }, [exchange]);
 
     async function myitemHandler() {
-        setMyItems(await itemsAPI.getMyItems(user._id));
+        if (myItems.length > 0) setMyItems([]); 
+        else setMyItems(await itemsAPI.getMyItems(user._id));
     }
 
     function selectHandler(myItem) {
@@ -66,15 +70,17 @@ export default function ItemDetailPage({ user, itemId }) {
                 </div>
             </div>
             {
-                user._id === item.user
+                user._id == itemOwner
                 ? <button onClick={deleteHandler}>Delete</button>
                 : <button onClick={myitemHandler}>Offer an exchange</button>
             }
-            <hr />
+            
+            {myItems.length > 0 ? <hr /> : ''}
+            
             {myItems.map((myItem, idx) => 
-                <button onClick={() => selectHandler(myItem)} key={idx}>
+                <div className='myItem' onClick={() => selectHandler(myItem)} key={idx}>
                     <Item name={myItem.name} photos={myItem.photos} value={myItem.value} key={idx} />
-                </button>
+                </div>
             )}
         </div>
     )

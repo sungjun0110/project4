@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import $ from 'jquery';
 import Item from '../../components/Item/Item';
 import * as itemsAPI from '../../utilities/items-api';
 import ItemForm from "../../components/ItemForm/ItemForm";
@@ -22,12 +23,13 @@ export default function MyItemsPage({ user }) {
 
     function formButtonHandler() {
         setIsFormActive(!isFormActive);
+        const formDiv = $('.form-div');
+        if (formDiv.css('height') === '500px') $('.form-div').css('height', '0px');
+        else $('.form-div').css('height', '500px')
     }
 
     return (
         <>
-            {isFormActive ? <ItemForm user={user} itemHandler={itemHandler} /> : ''}
-            <button className='form-btn' onClick={formButtonHandler}>{isFormActive ? 'Close' : 'Add an item'}</button>
             <div className='items-container'>
                 {items.map((item, idx) => (
                     <Link to={`/items/${item._id}`} key={idx}>
@@ -35,6 +37,11 @@ export default function MyItemsPage({ user }) {
                     </Link>
                 ))}
             </div>
+
+            <div className='form-div'>
+                {isFormActive ? <ItemForm user={user} itemHandler={itemHandler} /> : ''}
+            </div>
+            <button className='form-btn' onClick={formButtonHandler}>{isFormActive ? 'Close' : 'Add an item'}</button>
         </>
     );
 }

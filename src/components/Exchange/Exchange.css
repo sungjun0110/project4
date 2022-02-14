@@ -1,3 +1,7 @@
+.exchange {
+    padding-bottom: 80px;
+}
+
 .exchange-items {
     display: flex;
     justify-content: center;

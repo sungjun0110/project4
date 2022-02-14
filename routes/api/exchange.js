@@ -8,8 +8,12 @@ router.post('/', exchangeCtrl.create);
 
 // Get /api/exchange
 router.get('/:userId', exchangeCtrl.getAll);
+router.get('/completed/:userId', exchangeCtrl.getAllCompleted);
 
 // Put /api/exchange
 router.put('/', exchangeCtrl.acceptExchange);
+
+// Delete /api/exchange
+router.delete('/:exchangeId', exchangeCtrl.deleteExchange);
 
 module.exports = router;
