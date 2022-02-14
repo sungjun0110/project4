@@ -10,10 +10,13 @@ A website where users can exchange their goods for goods. You can send an offer 
 Main page listing items
 
 <img src="https://i.imgur.com/LkXEokE.png" width="600px">
+Exchange offer page
 
 <img src="https://i.imgur.com/v5zYNVr.png" width="600px">
+Accept or Reject page
 
 <img src="https://i.imgur.com/IWzylfj.png" width="600px">
+Exchange history page
 
 
 ## Technologies
