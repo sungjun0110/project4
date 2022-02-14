@@ -6,7 +6,7 @@
   --tan-2: #E7E2DD;
   --tan-3: #E2D9D1;
   --tan-4: #D3C1AE;
-  --orange: #F67F00;
+  --orange: #f99a35;
   --text-light: #968c84;
   --text-dark: #615954;
 }
@@ -78,10 +78,10 @@ code {
 }
 
 .form-container {
-  padding: 3vmin;
+  padding: 3em;
   background-color: var(--tan-1);
-  border: .1vmin solid var(--tan-3);
-  border-radius: 1vmin;
+  border: 2px solid var(--tan-3);
+  border-radius: 1em;
 }
 
 p.error-message {
@@ -91,7 +91,7 @@ p.error-message {
 
 form {
   display: grid;
-  gap: 1.25vmin;
+  gap: .8em;
   color: var(--text-light);
   border: 1px solid var(--tan-4);
   padding: 2em;
@@ -99,32 +99,32 @@ form {
 }
 
 label {
-  font-size: 2vmin;
+  font-size: 1.5em;
   display: flex;
   align-items: center;
 }
 
-input {
-  padding: 1vmin;
-  font-size: 2vmin;
-  border: .1vmin solid var(--tan-3);
+input, textarea, select {
+  padding: .5em;
+  font-size: 1.5em;
+  border: 1px solid var(--tan-3);
   border-radius: .5vmin;
   color: var(--text-dark);
   background-image: none !important; /* prevent lastpass */
   outline: none;
 }
 
-input:focus {
+input:focus, textarea:focus, select:focus {
   border-color: var(--orange);
 }
 
 button, a.button {
   font-family: 'Roboto Mono', monospace;
-  margin: 1vmin;
-  padding: 1vmin;
+  margin: 1em;
+  padding: .5em;
   color: var(--white);
   background-color: var(--orange);
-  font-size: 2vmin;
+  font-size: 1.5em;
   font-weight: bold;
   text-decoration: none;
   text-align: center;

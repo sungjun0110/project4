@@ -8,3 +8,7 @@ nav {
     align-items: center;
     backdrop-filter: blur(20px);
 }
+
+nav a {
+    text-decoration: none;
+}

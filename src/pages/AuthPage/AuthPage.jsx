@@ -11,7 +11,7 @@ export default function AuthPage({ setUser }) {
 
     return (
         <main>
-            <h1>AuthPage</h1>
+            <h1>Welcome!</h1>
             { isSignUpActive 
                 ? <SignUpForm setUser={setUser} />
                 : <LoginForm setUser={setUser} />

@@ -61,9 +61,9 @@ async function getAllCompleted(req, res) {
 async function acceptExchange(req, res) {
     const giveItem = req.body.giveItem;
     const takeItem = req.body.takeItem;
-    await Item.findByIdAndUpdate(giveItem._id, {user: takeItem.user}, 
+    await Item.findByIdAndUpdate(giveItem._id, {user: takeItem.user, isExchanging: false}, 
         async function(err, result) {
-            await Item.findByIdAndUpdate(takeItem._id, {user: giveItem.user}, async function(err, result) {
+            await Item.findByIdAndUpdate(takeItem._id, {user: giveItem.user, isExchanging: false}, async function(err, result) {
                 await Exchange.findByIdAndUpdate(req.body.exchangeId, {isCompleted: true}, function(err, exchange) {
                     res.json(exchange);
                 }).clone();

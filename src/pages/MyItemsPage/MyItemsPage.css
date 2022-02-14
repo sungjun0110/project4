@@ -1,6 +1,12 @@
+.items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .items-container {
     display: grid;
-    grid-template: "item item item item" 1fr / auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .form-btn {

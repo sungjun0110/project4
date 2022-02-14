@@ -13,7 +13,7 @@ export default function CompletedExchangePage({ user }) {
     }, []);
 
     return (<div className='NewExchangePage'>
-            {exchanges.map((exchange, idx) => <Exchange exchange={exchange} key={idx}   user={user} idx={idx} />) 
+            {exchanges.length > 0 ? exchanges.map((exchange, idx) => <Exchange exchange={exchange} key={idx}   user={user} idx={idx} />) : 'No History' 
             }
         </div>);
 }

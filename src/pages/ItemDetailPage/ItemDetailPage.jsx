@@ -52,7 +52,7 @@ export default function ItemDetailPage({ user, itemId }) {
         <div>
             <div className='item-container'>
                 <div className='img-container'>
-                    <img src={item.photos} alt='item' />
+                    <img className="detail-photo" src={item.photos} alt='item' />
                 </div>
                 <div className='item-description'>
                     {Object.keys(item).length > 0 
@@ -62,7 +62,11 @@ export default function ItemDetailPage({ user, itemId }) {
                                 <div className='content'>
                                     <span className='title'>{item.name}</span>
                                     <br />
-                                    {item.value}
+                                    {item.description}
+                                    <br />
+                                    <br />
+                                    <span className='title'>Condition: </span>
+                                    {item.condition}
                                 </div>
                             </>
                         : ''

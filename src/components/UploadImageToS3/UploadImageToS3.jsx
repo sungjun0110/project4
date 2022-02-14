@@ -44,6 +44,7 @@ export default function UploadImageToS3({ setFileName }) {
 
 
     return <div>
+        <label>Photo</label>
         <input type="file" onChange={handleFileInput}/>
         <button type="submit" onClick={() => uploadFile(selectedFile)}>Add Item</button>
         <div>Upload Progress is {progress}%</div>

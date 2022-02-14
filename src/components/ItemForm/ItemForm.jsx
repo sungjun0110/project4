@@ -38,6 +38,7 @@ export default function ItemForm({ user, itemHandler }) {
             <input type="text" name="name" value={item.name} onChange={handleChange} required />
             <label>Description</label>
             <textarea name="description" value={item.value} onChange={handleChange} required />
+            <label>Condition</label>
             <select value={item.condition} onChange={(evt) => conditionHandler(evt.target.value)} name="condition">
                 <option value='Like New'>Like New</option>
                 <option value='Good Condition'>Good Condition</option>

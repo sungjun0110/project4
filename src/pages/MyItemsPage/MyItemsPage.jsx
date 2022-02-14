@@ -24,18 +24,20 @@ export default function MyItemsPage({ user }) {
     function formButtonHandler() {
         setIsFormActive(!isFormActive);
         const formDiv = $('.form-div');
-        if (formDiv.css('height') === '500px') $('.form-div').css('height', '0px');
-        else $('.form-div').css('height', '500px')
+        if (formDiv.css('height') === '700px') $('.form-div').css('height', '0px');
+        else $('.form-div').css('height', '700px')
     }
 
     return (
         <>
-            <div className='items-container'>
-                {items.map((item, idx) => (
-                    <Link to={`/items/${item._id}`} key={idx}>
-                        <Item key={idx} name={item.name} photos={item.photos} value={item.value} />
-                    </Link>
-                ))}
+            <div className='items'>
+                <div className='items-container'>
+                    {items.map((item, idx) => (
+                        <Link to={`/items/${item._id}`} key={idx}>
+                            <Item key={idx} name={item.name} photos={item.photos} value={item.value} />
+                        </Link>
+                    ))}
+                </div>
             </div>
 
             <div className='form-div'>

@@ -18,9 +18,12 @@ async function create(req, res) {
 }
 
 async function index(req, res) {
-    const items = await Item.find({user: { $nin: [
-        req.params.userId,
-    ]}});
+    const items = await Item.find({
+        user: { $nin: [
+            req.params.userId,
+            ]},
+        $and: [{isExchanging: false}]
+        });
     res.json(items);
 }
 

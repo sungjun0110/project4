@@ -26,7 +26,7 @@ export default function NewExchangerPage({ user }) {
 
     return (
         <div className='NewExchangePage'>
-            {exchangesMap}
+            {exchangesMap.length > 0 ? exchangesMap : 'No exchanges'}
         </div>
     );
 }
