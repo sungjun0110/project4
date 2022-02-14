@@ -7,6 +7,7 @@ A website where users can exchange their goods for goods. You can send an offer 
 ## Screenshots
 
 <img src="https://i.imgur.com/hdDvEn2.png" width="600px">
+Main page listing items
 
 <img src="https://i.imgur.com/LkXEokE.png" width="600px">
 
