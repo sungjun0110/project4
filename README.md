@@ -21,7 +21,7 @@ Exchange history page
 
 ## Technologies
 
-Javascript, jQuery, React, Mongoose, MongoDB, Node.js, Express
+Javascript, jQuery, React, Mongoose, MongoDB, Node.js, Express, AWS S3
 
 ## Future Enhancements
 1. Adding a locaiton api to share user's locations
