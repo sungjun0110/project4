@@ -16,6 +16,10 @@ export default function AuthPage({ setUser }) {
                 ? <SignUpForm setUser={setUser} />
                 : <LoginForm setUser={setUser} />
             }
+            <p>
+                Test ID: test@test.com<br/>
+                Test Password: 1234
+            </p>
             <button onClick={activeHandler}>
                 { !isSignUpActive
                     ? 'Sign Up'

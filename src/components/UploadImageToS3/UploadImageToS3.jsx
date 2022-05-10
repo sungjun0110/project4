@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AWS from 'aws-sdk'
+import AWS from 'aws-sdk';
 
 const S3_BUCKET = process.env.REACT_APP_S3_BUCKET;
 const REGION = process.env.REACT_APP_S3_BASE_URL;
